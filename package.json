@@ -71,5 +71,9 @@
     "styles",
     "scss",
     "types"
-  ]
+  ],
+  "changelog": {
+    "0.1.1": "- Remove the 'private' field from the package.json to publish it.",
+    "0.1.0": "- Initial setup with basic configurations and shared styles."
+  }
 }
