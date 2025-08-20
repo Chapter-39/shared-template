@@ -1,6 +1,6 @@
 {
   "name": "@chapter-39/shared-template",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "description": "Shared styles, types, config, etc.",
   "type": "module",
   "scripts": {
@@ -56,10 +56,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Chapter-39/shared-template.git"
+    "url": "git+https://github.com/chapter-39/shared-template.git"
   },
   "bugs": {
-    "url": "https://github.com/Chapter-39/shared-template/issues"
+    "url": "https://github.com/chapter-39/shared-template/issues"
   },
   "homepage": "https://chapter-39.vasa.me/",
   "author": "@3v69",
@@ -73,7 +73,6 @@
     "types"
   ],
   "changelog": {
-    "0.1.1": "- Remove the 'private' field from the package.json to publish it.",
     "0.1.0": "- Initial setup with basic configurations and shared styles."
   }
 }
