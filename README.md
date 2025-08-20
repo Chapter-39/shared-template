@@ -1,6 +1,6 @@
-# minimal-template
+# shared-template
 
-Plantilla mínima con ESLint + Prettier + Husky + lint-staged y CI en GitHub Actions.
+Plantilla mínima con ESLint + Prettier + Husky + lint-staged y CI en GitHub Actions. Estado actual: mantenimiento.
 
 ## Scripts
 
@@ -28,18 +28,26 @@ npm pack --dry-run
 
 El paquete resultante incluirá `types/**` y `styles/**`.
 
+## Modo mantenimiento
+
+- Solo se aceptan fixes y mejoras pequeñas que no rompan API.
+- Dependabot mantiene dependencias semanalmente; CI exige lint, formato y build de tipos.
+- Consulta `SECURITY.md` y `CONTRIBUTING.md` para más detalles.
+
 ## Uso en proyectos consumidores
 
 - Estilos (SCSS):
   - Importa el entrypoint o archivos puntuales según necesites.
 
   ```scss
-  // Entry principal (re-exporta variables, reset y escalas tipográficas)
-  @use "@chapter-37/minimal-template/styles/main" as *;
+  // Entry principal (alias corto disponible)
+  @use "@chapter-39/shared-template/styles" as *; // alias
+  // o explícito
+  @use "@chapter-39/shared-template/styles/main" as *;
 
   // O módulos específicos
-  @use "@chapter-37/minimal-template/styles/_variables" as vars;
-  @use "@chapter-37/minimal-template/styles/type/_medium" as type;
+  @use "@chapter-39/shared-template/styles/_variables" as vars;
+  @use "@chapter-39/shared-template/styles/type/_medium" as type;
   ```
 
   Nota: Al usar `@use`, no incluyas la extensión `.scss`. Asegúrate de que tu bundler tenga soporte para Sass (por ejemplo, Vite/webpack con `sass` instalado).
@@ -53,7 +61,7 @@ El paquete resultante incluirá `types/**` y `styles/**`.
     Theme,
     Language,
     Mode,
-  } from "@chapter-37/minimal-template";
+  } from "@chapter-39/shared-template";
   ```
 
 ## Publicación
