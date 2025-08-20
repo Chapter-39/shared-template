@@ -1,6 +1,6 @@
 {
   "name": "@chapter-39/shared-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shared styles, types, config, etc.",
   "type": "module",
   "scripts": {
