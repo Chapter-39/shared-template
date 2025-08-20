@@ -1,8 +1,7 @@
 {
   "name": "@chapter-39/shared-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shared styles, types, config, etc.",
-  "private": true,
   "type": "module",
   "scripts": {
     "lint": "eslint .",
@@ -72,5 +71,9 @@
     "styles",
     "scss",
     "types"
-  ]
+  ],
+  "changelog": {
+    "0.1.1": "- Remove the 'private' field from the package.json to publish it.",
+    "0.1.0": "- Initial setup with basic configurations and shared styles."
+  }
 }
