@@ -1,6 +1,7 @@
 {
-  "name": "minimal-template",
+  "name": "@chapter-37/minimal-template",
   "version": "0.1.0",
+  "description": "Shared styles, types, config, etc.",
   "private": true,
   "type": "module",
   "scripts": {
@@ -26,5 +27,12 @@
     "*.{js,ts,jsx,tsx,vue}": [
       "eslint --fix"
     ]
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "types": "./types/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
