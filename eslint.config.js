@@ -5,7 +5,15 @@ import prettier from "eslint-config-prettier";
 
 export default [
   // Ignora lo obvio
-  { ignores: ["dist/**", "node_modules/**", ".idea/**", ".husky/**"] },
+  {
+    ignores: [
+      "dist/**",
+      "node_modules/**",
+      ".idea/**",
+      ".husky/**",
+      "types/**",
+    ],
+  },
 
   // Reglas base de JS
   js.configs.recommended,

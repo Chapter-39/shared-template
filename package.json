@@ -9,16 +9,21 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "prepack": "npm run clean && npm run build",
     "prepare": "husky"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
+    "@types/node": "^20.14.11",
     "eslint": "^9.10.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.29.1",
     "husky": "^9.1.0",
     "lint-staged": "^16.1.5",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx,vue,json,md,yml,yaml}": [
@@ -31,7 +36,10 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "types": "./types/index.d.ts",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   }
