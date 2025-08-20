@@ -7,6 +7,7 @@ Plantilla mínima con ESLint + Prettier + Husky + lint-staged y CI en GitHub Act
 - `npm run lint` / `npm run lint:fix`
 - `npm run format` / `npm run format:check`
 - `npm run build` genera declaraciones `.d.ts` en `types/`
+- `npm run clean` borra artefactos `.d.ts` en `types/`
 
 ## Requisitos
 
@@ -66,7 +67,24 @@ El paquete resultante incluirá `types/**` y `styles/**`.
 
 ## Publicación
 
-Nota: para publicar en GitHub Packages, elimina `"private": true` en `package.json` y usa un tag `vX.Y.Z` para disparar el workflow `Publish Package`. El paquete expone:
+Para publicar en GitHub Packages:
+
+- Elimina `"private": true` de `package.json`.
+- Crea un tag semántico `vX.Y.Z` en `main` y púlsalo.
+
+```bash
+git checkout main
+git pull --ff-only
+# actualiza version en package.json si aplica
+git commit -am "chore(release): v0.1.0"
+git tag v0.1.0
+git push origin main --follow-tags
+git push origin v0.1.0
+```
+
+El workflow `Publish Package` publicará usando `GITHUB_TOKEN`.
+
+El paquete expone:
 
 - `exports["."]` con `types` y `default` apuntando a `types/index.d.ts` (paquete de solo tipos).
 - `exports["./styles/*"]` para acceder a `styles/**` (SCSS sin compilar).
