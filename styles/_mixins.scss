@@ -1,0 +1,14 @@
+@use "variables";
+
+// Disallow element dragging
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin no-drag {
+  -webkit-user-drag: none;
+}
+
+// Disallow profile to select an text
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin no-select {
+  -webkit-touch-callout: none;
+  user-select: none;
+}

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ES2020",
+    "moduleResolution": "Bundler",
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "stripInternal": true,
+    "composite": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "newLine": "lf",
+    "outDir": "types",
+    "rootDir": "types/types",
+    "baseUrl": "."
+  },
+  "include": ["types/types/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

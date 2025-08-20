@@ -1,0 +1,25 @@
+name: Feature request
+description: Propón una mejora o nueva funcionalidad
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por tu propuesta. Este proyecto está en modo mantenimiento; se priorizan mejoras pequeñas y no disruptivas.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema que resuelve
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Propuesta
+      description: Breve descripción de la solución, API y ejemplos
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas

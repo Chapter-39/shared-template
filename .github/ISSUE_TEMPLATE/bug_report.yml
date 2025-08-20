@@ -1,0 +1,39 @@
+name: Bug report
+description: Reporta un error o comportamiento inesperado
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por tu reporte. Completa la información para que podamos reproducirlo.
+  - type: input
+    id: version
+    attributes:
+      label: Versión del paquete
+      description: Ej. v0.1.0
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamiento esperado
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamiento actual
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      description: Incluye snippets de código si aplica
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: Entorno
+      description: OS, Node, gestor de paquetes, bundler, etc.

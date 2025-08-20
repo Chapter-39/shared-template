@@ -1,0 +1,43 @@
+@use "colors/default-dark";
+@use "colors/default-light";
+
+:root {
+  // rgb colors
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  --rgb-red: rgb(var(--red));
+  --rgb-orange: rgb(var(--orange));
+  --rgb-yellow: rgb(var(--yellow));
+  --rgb-green: rgb(var(--green));
+  --rgb-mint: rgb(var(--mint));
+  --rgb-teal: rgb(var(--teal));
+  --rgb-cyan: rgb(var(--cyan));
+  --rgb-blue: rgb(var(--blue));
+  --rgb-indigo: rgb(var(--indigo));
+  --rgb-purple: rgb(var(--purple));
+  --rgb-pink: rgb(var(--pink));
+  --rgb-brown: rgb(var(--brown));
+
+  // rgb grays
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  --rgb-gray: rgb(var(--gray));
+  --rgb-gray-2: rgb(var(--gray-2));
+  --rgb-gray-3: rgb(var(--gray-3));
+  --rgb-gray-4: rgb(var(--gray-4));
+  --rgb-gray-5: rgb(var(--gray-5));
+  --rgb-gray-6: rgb(var(--gray-6));
+
+  // rgba colors
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  --rgba-background: rgba(var(--background), 1);
+  --rgba-text: rgba(var(--text), 1);
+  --rgba-text-secondary: rgba(var(--text), 0.6);
+  --rgba-text-tertiary: rgba(var(--text), 0.3);
+}
+
+@media (prefers-color-scheme: light) {
+  @extend %default-light;
+}
+
+@media (prefers-color-scheme: dark) {
+  @extend %default-dark;
+}

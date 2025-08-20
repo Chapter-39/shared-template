@@ -1,6 +1,7 @@
 {
-  "name": "minimal-template",
+  "name": "@chapter-39/shared-template",
   "version": "0.1.0",
+  "description": "Shared styles, types, config, etc.",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,17 +9,23 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "find types -type f -name '*.d.ts' -delete && find types -type f -name '*.d.ts.map' -delete",
+    "prepack": "npm run clean && npm run build",
     "prepare": "husky"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
+    "@types/node": "^20.14.11",
     "eslint": "^9.10.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.29.1",
     "husky": "^9.1.0",
     "lint-staged": "^16.1.5",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
   },
+  "license": "MIT",
   "lint-staged": {
     "*.{js,ts,jsx,tsx,vue,json,md,yml,yaml}": [
       "prettier --write"
@@ -26,5 +33,44 @@
     "*.{js,ts,jsx,tsx,vue}": [
       "eslint --fix"
     ]
-  }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "types": "./types/index.d.ts",
+  "files": [
+    "types",
+    "styles"
+  ],
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./types/index.d.ts"
+    },
+    "./styles": "./styles/main.scss",
+    "./styles/*": "./styles/*"
+  },
+  "style": "./styles/main.scss",
+  "sideEffects": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chapter-39/shared-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Chapter-39/shared-template/issues"
+  },
+  "homepage": "https://chapter-39.vasa.me/",
+  "author": "@3v69",
+  "keywords": [
+    "template",
+    "eslint",
+    "prettier",
+    "husky",
+    "styles",
+    "scss",
+    "types"
+  ]
 }

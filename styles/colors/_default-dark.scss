@@ -1,0 +1,31 @@
+// https://developer.apple.com/design/human-interface-guidelines/color
+// Colors (iOS, iPadOS System Colors)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+.dark,
+%default-dark {
+  // System Colors
+  --red: 255, 66, 69; // systemRed
+  --orange: 255, 146, 48; // systemOrange
+  --yellow: 255, 214, 0; // systemYellow
+  --green: 48, 209, 88; // systemGreen
+  --mint: 0, 218, 195; // systemMint
+  --teal: 0, 210, 224; // systemTeal
+  --cyan: 60, 211, 254; // systemCyan
+  --blue: 0, 145, 255; // systemBlue
+  --indigo: 107, 93, 255; // systemIndigo
+  --purple: 219, 52, 242; // systemPurple
+  --pink: 255, 55, 95; // systemPink
+  --brown: 183, 138, 102; // systemBrown
+
+  // System Grays
+  --gray: 142, 142, 147; // systemGray
+  --gray-2: 99, 99, 102; // systemGray2
+  --gray-3: 72, 72, 74; // systemGray3
+  --gray-4: 58, 58, 60; // systemGray4
+  --gray-5: 44, 44, 46; // systemGray5
+  --gray-6: 28, 28, 30; // systemGray6
+
+  // Background and Text Colors
+  --background: 15, 18, 21; // systemBackground
+  --text: 233, 236, 249; // systemLabel
+}
