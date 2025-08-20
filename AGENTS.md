@@ -2,9 +2,9 @@
 
 ## Project Structure & Module Organization
 
-- Root contains configuration: `.editorconfig`, `eslint.config.cjs`, `.prettierrc.json`, `.husky/`, and CI in `.github/`.
+- Root contains configuration: `.editorconfig`, `eslint.config.js`, `.prettier*`, `.husky/`, and CI in `.github/`.
 - No application code is included by default. Add source under `src/` and tests under `tests/` or colocated as `*.test.(js|ts)`.
-- Keep generated artifacts out of version control (`dist/`, `node_modules/`). Static assets can live in `public/` or `assets/`.
+- Keep generated artifacts out of version control (`node_modules/`, `types/**/*.d.ts*`). Static assets can live in `public/` or `assets/`.
 
 ## Build, Test, and Development Commands
 
@@ -14,6 +14,8 @@
 - `npm run lint:fix`: Auto-fix lint issues where possible.
 - `npm run format`: Format the repo with Prettier.
 - `npm run format:check`: Verify formatting without writing changes.
+- `npm run build`: Emit type declarations to `types/`.
+- `npm run clean`: Remove generated `*.d.ts` and `*.d.ts.map` under `types/`.
 
 ## Coding Style & Naming Conventions
 
@@ -28,7 +30,7 @@
 - No test framework is bundled. Recommended: Vitest or Jest.
 - Place tests in `tests/**` or alongside sources as `*.test.ts`/`*.spec.ts`.
 - Aim for meaningful unit coverage on utilities and modules that contain logic. Add lightweight integration tests when applicable.
-- Run linting and formatting in CI; extend the workflow when tests are added.
+- CI runs lint, format check, and type build; extend with tests when added.
 
 ## Commit & Pull Request Guidelines
 
@@ -41,3 +43,14 @@
 
 - Require Node 20+. Never commit secrets; `.env` is ignored. Use GitHub Actions secrets for CI.
 - Dependabot is enabled; keep dependencies current. Review updates with CI green.
+
+## Package Exports (Consumers)
+
+- Root export: `@chapter-39/shared-template` provides TypeScript types via `types/index.d.ts`.
+- Styles alias: `@chapter-39/shared-template/styles` resolves to `styles/main.scss`.
+- Styles subpaths: `@chapter-39/shared-template/styles/*` for specific SCSS modules.
+
+## Release & Publish
+
+- Tag releases as `vX.Y.Z` to trigger the GitHub Actions publish workflow.
+- Remove `"private": true` before publishing to GitHub Packages.
