@@ -1,5 +1,5 @@
 {
-  "name": "@chapter-37/minimal-template",
+  "name": "@chapter-37/shared-template",
   "version": "0.1.0",
   "description": "Shared styles, types, config, etc.",
   "private": true,
@@ -36,10 +36,20 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "types": "./dist/index.d.ts",
+  "types": "./types/index.d.ts",
   "files": [
-    "dist"
+    "types",
+    "styles"
   ],
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./types/index.d.ts"
+    },
+    "./styles/*": "./styles/*"
+  },
+  "style": "./styles/main.scss",
+  "sideEffects": false,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   }

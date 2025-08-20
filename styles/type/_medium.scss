@@ -1,0 +1,107 @@
+@use "../variables";
+
+.type-large-title,
+%type-large-title {
+  font-family: variables.$font-family-display;
+  font-size: 33pt;
+  font-weight: variables.$font-weight-regular;
+  letter-spacing: 0.4pt;
+  line-height: 40pt;
+}
+
+.type-title-1,
+%type-title-1 {
+  font-family: variables.$font-family-display;
+  font-size: 27pt;
+  font-weight: variables.$font-weight-regular;
+  letter-spacing: 0.29pt;
+  line-height: 33pt;
+}
+
+.type-title-2,
+%type-title-2 {
+  font-family: variables.$font-family-display;
+  font-size: 21pt;
+  font-weight: variables.$font-weight-regular;
+  letter-spacing: -0.36pt;
+  line-height: 26pt;
+}
+
+.type-title-3,
+%type-title-3 {
+  font-family: variables.$font-family-display;
+  font-size: 19pt;
+  font-weight: variables.$font-weight-regular;
+  letter-spacing: -0.45pt;
+  line-height: 24pt;
+}
+
+.type-headline,
+%type-headline {
+  font-family: variables.$font-family-text;
+  font-size: 16pt;
+  font-weight: variables.$font-weight-semi-bold;
+  letter-spacing: -0.31pt;
+  line-height: 21pt;
+}
+
+.type-body,
+%type-body {
+  font-family: variables.$font-family-text;
+  font-size: 16pt;
+  font-weight: variables.$font-weight-regular;
+  letter-spacing: -0.31pt;
+  line-height: 21pt;
+}
+
+.type-body-bold,
+%type-body-bold {
+  @extend %type-body;
+
+  font-weight: variables.$font-weight-bold;
+}
+
+.type-callout,
+%type-callout {
+  font-family: variables.$font-family-text;
+  font-size: 15pt;
+  font-weight: variables.$font-weight-regular;
+  letter-spacing: -0.23pt;
+  line-height: 20pt;
+}
+
+.type-sub-headline,
+%type-sub-headline {
+  font-family: variables.$font-family-text;
+  font-size: 14pt;
+  font-weight: variables.$font-weight-regular;
+  letter-spacing: -0.15pt;
+  line-height: 19pt;
+}
+
+.type-footnote,
+%type-footnote {
+  font-family: variables.$font-family-text;
+  font-size: 12pt;
+  font-weight: variables.$font-weight-regular;
+  letter-spacing: 0;
+  line-height: 16pt;
+}
+
+.type-caption-1,
+%type-caption-1 {
+  font-family: variables.$font-family-text;
+  font-size: 11pt;
+  font-weight: variables.$font-weight-regular;
+  letter-spacing: 0.06pt;
+  line-height: 13pt;
+}
+
+.type-caption-2,
+%type-caption-2 {
+  font-family: variables.$font-family-text;
+  font-size: 11pt;
+  font-weight: variables.$font-weight-regular;
+  letter-spacing: 0.06pt;
+  line-height: 13pt;
+}

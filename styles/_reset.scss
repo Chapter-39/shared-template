@@ -1,0 +1,139 @@
+@use "mixins";
+@use "variables";
+
+*,
+*::before,
+*::after {
+  @include mixins.no-drag;
+
+  background: transparent;
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+i,
+p,
+span,
+strong,
+ul,
+li,
+button,
+select {
+  @include mixins.no-select;
+}
+
+html {
+  font-size: variables.$root-font-size;
+  height: 100vh;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-top: env(safe-area-inset-top);
+  -webkit-tap-highlight-color: transparent; /* prevent gray background on active elements */
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+#app {
+  overflow: hidden;
+  width: 100%;
+}
+
+body,
+#app {
+  height: 100%;
+}
+
+#app {
+  position: relative;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    display: block;
+  }
+}
+
+hr {
+  display: block;
+  height: 1px;
+  margin: variables.$grid 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:active,
+  &:hover,
+  &:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+button {
+  background: transparent;
+  color: inherit;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+canvas {
+  display: block;
+  vertical-align: top;
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+select {
+  appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+
+textarea {
+  border: none;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  overflow: auto;
+  resize: none;
+}
+
+.is-disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
