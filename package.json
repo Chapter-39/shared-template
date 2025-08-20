@@ -2,7 +2,6 @@
   "name": "@chapter-39/shared-template",
   "version": "0.1.0",
   "description": "Shared styles, types, config, etc.",
-  "private": true,
   "type": "module",
   "scripts": {
     "lint": "eslint .",
