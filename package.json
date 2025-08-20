@@ -57,7 +57,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Chapter-39/landing-template.git"
+    "url": "git+https://github.com/Chapter-39/shared-template.git"
   },
   "bugs": {
     "url": "https://github.com/Chapter-39/shared-template/issues"
