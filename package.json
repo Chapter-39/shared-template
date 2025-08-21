@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint . --fix && stylelint \"**/*.{css,scss}\" --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "stylelint": "stylelint \"**/*.{css,scss}\"",
     "build": "tsc -p tsconfig.build.json",
     "clean": "find types -type f -name '*.d.ts' -delete && find types -type f -name '*.d.ts.map' -delete",
     "pack": "npm pack",
@@ -22,11 +23,20 @@
     "eslint-plugin-import": "^2.29.1",
     "husky": "^9.1.0",
     "lint-staged": "^16.1.5",
+    "postcss": "^8.5.6",
+    "postcss-scss": "^4.0.9",
     "prettier": "^3.3.3",
+    "stylelint": "^16.23.1",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^13.1.0",
     "typescript": "^5.5.4"
   },
   "license": "MIT",
   "lint-staged": {
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
     "*.{js,ts,jsx,tsx,vue,json,md,yml,yaml}": [
       "prettier --write"
     ],
