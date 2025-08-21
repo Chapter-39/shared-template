@@ -1,6 +1,6 @@
 {
   "name": "@chapter-39/shared-template",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared styles, types, config, etc.",
   "type": "module",
   "scripts": {
@@ -10,6 +10,7 @@
     "format:check": "prettier --check .",
     "build": "tsc -p tsconfig.build.json",
     "clean": "find types -type f -name '*.d.ts' -delete && find types -type f -name '*.d.ts.map' -delete",
+    "pack": "npm pack",
     "prepack": "npm run clean && npm run build",
     "prepare": "husky"
   },
@@ -73,6 +74,7 @@
     "types"
   ],
   "changelog": {
+    "0.2.0": "- Updated dependencies to latest versions.\n- Added support for TypeScript 5.5.4.\n- Improved linting and formatting scripts.\n- Enhanced package structure for better maintainability.",
     "0.1.0": "- Initial setup with basic configurations and shared styles."
   }
 }

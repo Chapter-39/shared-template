@@ -2,7 +2,8 @@
 // Colors (iOS, iPadOS System Colors)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 .dark,
-%default-dark {
+%default-dark,
+@media (prefers-color-scheme: dark) {
   // System Colors
   --red: 255, 66, 69; // systemRed
   --orange: 255, 146, 48; // systemOrange
