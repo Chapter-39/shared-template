@@ -32,6 +32,7 @@ export default {
       },
     ],
     // Allow unconventional selector lists that include at-rules used in SCSS context
-    "selector-type-no-unknown": null,
+    // Allow unconventional selector lists that include at-rules used in SCSS context (e.g., SCSS placeholders)
+    "selector-type-no-unknown": [true, { ignoreTypes: ["/^%/", "from", "to"] }],
   },
 };
