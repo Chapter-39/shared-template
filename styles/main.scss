@@ -1,5 +1,4 @@
-@use "colors/default-dark";
-@use "colors/default-light";
+@use "variables";
 
 :root {
   // rgb colors
@@ -34,10 +33,23 @@
   --rgba-text-tertiary: rgba(var(--text), 0.3);
 }
 
-@media (prefers-color-scheme: light) {
-  @extend %default-light;
-}
-
-@media (prefers-color-scheme: dark) {
-  @extend %default-dark;
+main {
+  align-items: center;
+  background:
+    radial-gradient(circle at 50% 10%, var(--background) 0%, transparent 100%),
+    radial-gradient(circle at 80% 20%, var(--rgb-gray-4) 0%, transparent 100%),
+    radial-gradient(circle at 50% 80%, var(--rgb-gray-5) 1%, transparent 100%),
+    linear-gradient(180deg, var(--rgba-background) 0%, var(--rgb-gray-6) 100%);
+  color: var(--rgba-text);
+  display: flex;
+  flex-direction: column;
+  font-family: variables.$font-family;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  white-space: nowrap;
+  width: 100vw;
 }
