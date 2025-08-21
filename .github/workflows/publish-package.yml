@@ -21,13 +21,6 @@ jobs:
           scope: "@chapter-39"
       - run: npm ci
       - run: npm run build
-      - name: Verify auth (PAT)
-        if: ${{ secrets.PERSONAL_ACCESS_TOKEN != '' }}
-        run: npm whoami --registry=https://npm.pkg.github.com || echo "Auth check failed (PAT)"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-      - name: Publish (PAT)
-        if: ${{ secrets.PERSONAL_ACCESS_TOKEN != '' }}
-        run: npm publish
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
