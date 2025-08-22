@@ -1,8 +1,6 @@
 // https://developer.apple.com/design/human-interface-guidelines/color
 // Colors (iOS, iPadOS System Colors)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-.dark,
-%default-dark,
 @media (prefers-color-scheme: dark) {
   // System Colors
   --red: 255, 66, 69; // systemRed

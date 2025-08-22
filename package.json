@@ -1,6 +1,6 @@
 {
   "name": "@chapter-39/shared-template",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Shared styles, types, config, etc.",
   "type": "module",
   "scripts": {
@@ -52,6 +52,7 @@
     "types",
     "styles"
   ],
+  "sass": "./styles/_index.scss",
   "exports": {
     ".": {
       "types": "./types/index.d.ts",
@@ -60,7 +61,6 @@
     "./styles": "./styles/main.scss",
     "./styles/*": "./styles/*"
   },
-  "style": "./styles/main.scss",
   "sideEffects": false,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -84,6 +84,7 @@
     "types"
   ],
   "changelog": {
+    "0.3.0": "- Added new shared styles and updated existing ones.\n- Improved TypeScript definitions for better developer experience.\n- Enhanced linting rules and fixed existing issues.\n- Updated dependencies to latest versions.",
     "0.2.0": "- Updated dependencies to latest versions.\n- Added support for TypeScript 5.5.4.\n- Improved linting and formatting scripts.\n- Enhanced package structure for better maintainability.",
     "0.1.0": "- Initial setup with basic configurations and shared styles."
   }
