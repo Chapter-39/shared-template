@@ -88,4 +88,4 @@ El paquete expone:
 
 - `exports["."]` con `types` y `default` apuntando a `types/index.d.ts` (paquete de solo tipos).
 - `exports["./styles/*"]` para acceder a `styles/**` (SCSS sin compilar).
-- Campo `style` apuntando a `styles/main.scss` como conveniencia para bundlers que lo soportan.
+- Campo `style` apuntando a `styles/root.scss` como conveniencia para bundlers que lo soportan.

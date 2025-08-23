@@ -1,7 +1,7 @@
 // https://developer.apple.com/design/human-interface-guidelines/color
 // Colors (iOS, iPadOS System Colors)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-@media (prefers-color-scheme: light) {
+@mixin light-color-variables {
   // System Colors
   --red: 255, 56, 60; // systemRed
   --orange: 255, 141, 40; // systemOrange
@@ -27,4 +27,14 @@
   // Background and Text Colors
   --background: 242, 244, 247; // systemBackground
   --text: 15, 18, 21; // systemLabel
+}
+
+.light {
+  @include light-color-variables;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include light-color-variables;
+  }
 }

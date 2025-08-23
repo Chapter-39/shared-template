@@ -1,5 +1,6 @@
 // Public Sass entrypoint for the package
 // Re-export variables, mixins, and the main styles
+@forward "reset";
+@forward "root";
 @forward "variables";
 @forward "mixins";
-@forward "main";

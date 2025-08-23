@@ -47,7 +47,7 @@
 ## Package Exports (Consumers)
 
 - Root export: `@chapter-39/shared-template` provides TypeScript types via `types/index.d.ts`.
-- Styles alias: `@chapter-39/shared-template/styles` resolves to `styles/main.scss`.
+- Styles alias: `@chapter-39/shared-template/styles` resolves to `styles/root.scss`.
 - Styles subpaths: `@chapter-39/shared-template/styles/*` for specific SCSS modules.
 
 ## Release & Publish
