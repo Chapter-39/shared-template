@@ -1,29 +1,29 @@
-## Contribución
+## Contribution
 
-Este repo está en modo mantenimiento.
+This repo is in maintenance mode.
 
-## Reglas básicas
+## Basic rules
 
 - Node `>=20`.
-- Formato: `npm run format` / `npm run format:check`.
-- Lint: `npm run lint` / `npm run lint:fix`.
-- Tipos: `npm run build` genera `.d.ts` en `types/`.
-- Commits y PRs siguen Convencional Commits: `feat: …`, `fix: …`, `docs: …`.
+- Formatting: `npm run format` / `npm run format:check`.
+- Linting: `npm run lint` / `npm run lint:fix`.
+- Types: `npm run build` generates `.d.ts` in `types/`.
+- Commits and PRs follow Conventional Commits: `feat: ...`, `fix: ...`, `docs: ...`.
 
-## Flujo de trabajo
+## Workflow
 
-1. Crea una rama desde `main`.
-2. Realiza cambios pequeños y enfocados.
-3. Ejecuta lint/format y asegúrate de que CI pase.
-4. Abre un Pull Request usando la plantilla incluida.
+1. Create a branch from `main`.
+2. Make small, focused changes.
+3. Run lint/format and ensure CI passes.
+4. Open a Pull Request using the included template.
 
-## Alcance en modo mantenimiento
+## Scope in maintenance mode
 
-- Se priorizan fixes y mejoras pequeñas de DX.
-- Nuevas features solo si no rompen API y tienen impacto claro.
+- Prioritize fixes and small DX improvements.
+- New features only if they do not break the API and have clear impact.
 
-## Publicación
+## Publishing
 
-- El publish se realiza vía GitHub Actions con tags `vX.Y.Z`.
+- Publishing is done via GitHub Actions with `vX.Y.Z` tags.
 
-Gracias por ayudar a mantener el proyecto saludable.
+Thanks for helping keep the project healthy.

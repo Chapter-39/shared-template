@@ -1,15 +1,15 @@
 # shared-template
 
-Plantilla mínima con ESLint + Prettier + Husky + lint-staged y CI en GitHub Actions. Estado actual: mantenimiento.
+Minimal template with ESLint + Prettier + Husky + lint-staged and CI in GitHub Actions. Current status: maintenance.
 
 ## Scripts
 
 - `npm run lint` / `npm run lint:fix`
 - `npm run format` / `npm run format:check`
-- `npm run build` genera declaraciones `.d.ts` en `types/`
-- `npm run clean` borra artefactos `.d.ts` en `types/`
+- `npm run build` generates `.d.ts` declarations in `types/`
+- `npm run clean` deletes `.d.ts` artifacts in `types/`
 
-## Requisitos
+## Requirements
 
 Node 20+.
 
@@ -20,41 +20,41 @@ npm ci
 npm run prepare
 ```
 
-## Build de tipos
+## Type build
 
 ```bash
 npm run build
 npm pack --dry-run
 ```
 
-El paquete resultante incluirá `types/**` y `styles/**`.
+The resulting package will include `types/**` and `styles/**`.
 
-## Modo mantenimiento
+## Maintenance mode
 
-- Solo se aceptan fixes y mejoras pequeñas que no rompan API.
-- Dependabot mantiene dependencias semanalmente; CI exige lint, formato y build de tipos.
-- Consulta `SECURITY.md` y `CONTRIBUTING.md` para más detalles.
+- Only fixes and small improvements that don't break the API are accepted.
+- Dependabot keeps dependencies updated weekly; CI requires lint, format, and type build.
+- See `SECURITY.md` and `CONTRIBUTING.md` for more details.
 
-## Uso en proyectos consumidores
+## Usage in consuming projects
 
-- Estilos (SCSS):
-  - Importa el entrypoint o archivos puntuales según necesites.
+- Styles (SCSS):
+  - Import the entrypoint or specific files as needed.
 
   ```scss
-  // Entry principal (alias corto disponible)
+  // Main entry (short alias available)
   @use "@chapter-39/shared-template/styles" as *; // alias
-  // o explícito
+  // or explicit
   @use "@chapter-39/shared-template/styles/main" as *;
 
-  // O módulos específicos
+  // Or specific modules
   @use "@chapter-39/shared-template/styles/_variables" as vars;
   @use "@chapter-39/shared-template/styles/type/_medium" as type;
   ```
 
-  Nota: Al usar `@use`, no incluyas la extensión `.scss`. Asegúrate de que tu bundler tenga soporte para Sass (por ejemplo, Vite/webpack con `sass` instalado).
+  Note: When using `@use`, do not include the `.scss` extension. Ensure your bundler supports Sass (for example, Vite/webpack with `sass` installed).
 
-- Tipos (TypeScript):
-  - Importa tipos directamente del paquete. Los `.d.ts` viven en `types/**` y se resuelven vía `exports`.
+- Types (TypeScript):
+  - Import types directly from the package. The `.d.ts` files live in `types/**` and resolve via `exports`.
 
   ```ts
   import type {
@@ -65,27 +65,27 @@ El paquete resultante incluirá `types/**` y `styles/**`.
   } from "@chapter-39/shared-template";
   ```
 
-## Publicación
+## Publishing
 
-Para publicar en GitHub Packages:
+To publish to GitHub Packages:
 
-- Elimina `"private": true` de `package.json`.
-- Crea un tag semántico `vX.Y.Z` en `main` y púlsalo.
+- Remove `"private": true` from `package.json`.
+- Create a semantic tag `vX.Y.Z` on `main` and push it.
 
 ```bash
 git checkout main
 git pull --ff-only
-# actualiza version en package.json si aplica
+# update version in package.json if applicable
 git commit -am "chore(release): v0.1.0"
 git tag v0.1.0
 git push origin main --follow-tags
 git push origin v0.1.0
 ```
 
-El workflow `Publish Package` publicará usando `GITHUB_TOKEN`.
+The `Publish Package` workflow will publish using `GITHUB_TOKEN`.
 
-El paquete expone:
+The package exposes:
 
-- `exports["."]` con `types` y `default` apuntando a `types/index.d.ts` (paquete de solo tipos).
-- `exports["./styles/*"]` para acceder a `styles/**` (SCSS sin compilar).
-- Campo `style` apuntando a `styles/root.scss` como conveniencia para bundlers que lo soportan.
+- `exports["."]` with `types` and `default` pointing to `types/index.d.ts` (types-only package).
+- `exports["./styles/*"]` to access `styles/**` (uncompiled SCSS).
+- `style` field pointing to `styles/root.scss` as a convenience for bundlers that support it.
