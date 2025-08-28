@@ -1,19 +1,19 @@
-# Política de Seguridad
+# Security Policy
 
-## Versiones soportadas
+## Supported versions
 
-Este paquete está en modo mantenimiento. Solo se aceptan:
+This package is in maintenance mode. Only the following are accepted:
 
-- Correcciones críticas de seguridad.
-- Actualizaciones menores de dependencias que no rompan API.
+- Critical security fixes.
+- Minor dependency updates that do not break the API.
 
-Se soporta únicamente la última versión publicada.
+Only the latest released version is supported.
 
-## Reporte de vulnerabilidades
+## Vulnerability reporting
 
-Por favor, no abras un issue público. En su lugar:
+Please do not open a public issue. Instead:
 
-1. Usa GitHub Security Advisories (Security > Advisories) si está disponible en el repositorio.
-2. Alternativamente, contacta al mantenedor a través de Issues indicando que quieres reportar un problema de seguridad y te guiaremos por privado.
+1. Use GitHub Security Advisories (Security > Advisories) if available in the repository.
+2. Alternatively, contact the maintainer via Issues indicating that you want to report a security problem, and we will guide you privately.
 
-Agradecemos las divulgaciones responsables.
+We appreciate responsible disclosures.

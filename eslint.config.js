@@ -4,7 +4,7 @@ import importPlugin from "eslint-plugin-import";
 import prettier from "eslint-config-prettier";
 
 export default [
-  // Ignora lo obvio
+  // Ignore obvious directories
   {
     ignores: [
       "dist/**",
@@ -15,10 +15,10 @@ export default [
     ],
   },
 
-  // Reglas base de JS
+  // Base JS rules
   js.configs.recommended,
 
-  // Tu capa del proyecto
+  // Project-specific layer
   {
     files: ["**/*.{js,ts,jsx,tsx,vue}"],
     languageOptions: {
@@ -29,6 +29,6 @@ export default [
     rules: {},
   },
 
-  // Desactiva choques con Prettier (no formatea, solo evita conflictos)
+  // Disable conflicts with Prettier (doesn't format, only avoids conflicts)
   prettier,
 ];

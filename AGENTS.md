@@ -1,56 +1,44 @@
 # Repository Guidelines
 
+This repo provides shared TypeScript types and SCSS styles with a minimal, CI-friendly setup.
+
 ## Project Structure & Module Organization
 
-- Root contains configuration: `.editorconfig`, `eslint.config.js`, `.prettier*`, `.husky/`, and CI in `.github/`.
-- No application code is included by default. Add source under `src/` and tests under `tests/` or colocated as `*.test.(js|ts)`.
-- Keep generated artifacts out of version control (`node_modules/`, `types/**/*.d.ts*`). Static assets can live in `public/` or `assets/`.
+- Config at root: `.editorconfig`, `eslint.config.js`, `.prettier*`, `.husky/`, `.github/`.
+- Types live in `types/**` (emitted `.d.ts`). Styles live in `styles/**` (SCSS).
+- Add application sources in `src/` (optional) and tests in `tests/` or colocated as `*.test.(js|ts)`.
+- Do not version build artifacts (`node_modules/`, generated `types/**/*.d.ts*`).
 
 ## Build, Test, and Development Commands
 
-- `npm ci`: Install exact lockfile dependencies (required for CI parity).
-- `npm run prepare`: Set up Husky git hooks.
-- `npm run lint`: Lint codebase via ESLint.
-- `npm run lint:fix`: Auto-fix lint issues where possible.
-- `npm run format`: Format the repo with Prettier.
-- `npm run format:check`: Verify formatting without writing changes.
-- `npm run build`: Emit type declarations to `types/`.
-- `npm run clean`: Remove generated `*.d.ts` and `*.d.ts.map` under `types/`.
+- `npm ci`: Install exact dependencies (CI parity).
+- `npm run prepare`: Install Husky hooks.
+- `npm run format` / `npm run format:check`: Prettier formatting and verification.
+- `npm run lint` / `npm run lint:fix`: ESLint analysis and autofix; Stylelint runs via `lint-staged` and `stylelint` script.
+- `npm run build`: Emit `.d.ts` to `types/` via `tsc -p tsconfig.build.json`.
+- `npm run clean`: Remove generated `*.d.ts` and maps.
 
 ## Coding Style & Naming Conventions
 
-- Indentation: 2 spaces; LF line endings; final newline enforced (`.editorconfig`).
-- Prettier: width 100, double quotes, semicolons on, trailing commas where valid.
-- ESLint: `@eslint/js` recommended rules + `eslint-plugin-import`; Prettier config disables conflicting rules.
-- Names: files/folders kebab-case (`my-module.ts`), classes/types PascalCase, functions/vars camelCase, constants SCREAMING_SNAKE_CASE.
-- Imports: prefer absolute within project root or clean relative paths; group and sort consistently.
+- Indentation 2 spaces; LF; final newline enforced.
+- Prettier width 100, double quotes, semicolons, trailing commas.
+- ESLint: `@eslint/js` + `eslint-plugin-import`; Prettier config disables conflicting rules.
+- Naming: files/folders kebab-case (`my-module.ts`); classes/types PascalCase; functions/vars camelCase; constants SCREAMING_SNAKE_CASE.
 
 ## Testing Guidelines
 
-- No test framework is bundled. Recommended: Vitest or Jest.
-- Place tests in `tests/**` or alongside sources as `*.test.ts`/`*.spec.ts`.
-- Aim for meaningful unit coverage on utilities and modules that contain logic. Add lightweight integration tests when applicable.
-- CI runs lint, format check, and type build; extend with tests when added.
+- No test framework bundled. Recommended: Vitest or Jest.
+- Place tests in `tests/**` or next to sources (`*.test.ts` / `*.spec.ts`).
+- Aim for unit coverage on utilities; add lightweight integration tests as needed.
+- Run with your chosen tool (e.g., `vitest run`); ensure CI stays green.
 
 ## Commit & Pull Request Guidelines
 
-- PR titles must follow Conventional Commits (enforced by `pr-title-check.yml`): `feat: ...`, `fix: ...`, `docs: ...`, etc.
-- Use the PR template: include a clear summary, change type, how to test, and checklist. Link issues (e.g., `Closes #123`).
-- Keep commits focused and descriptive; prefer incremental, reviewable changes over large dumps.
-- CODEOWNERS exists; ensure reviewers are requested as appropriate.
+- Use Conventional Commits for titles and messages: `feat: ...`, `fix: ...`, `docs: ...` (enforced by `pr-title-check.yml`).
+- PRs: include summary, change type, test plan, checklist; link issues (`Closes #123`).
+- Keep changes focused and reviewable; request CODEOWNERS as reviewers when applicable.
 
 ## Security & Configuration Tips
 
-- Require Node 20+. Never commit secrets; `.env` is ignored. Use GitHub Actions secrets for CI.
-- Dependabot is enabled; keep dependencies current. Review updates with CI green.
-
-## Package Exports (Consumers)
-
-- Root export: `@chapter-39/shared-template` provides TypeScript types via `types/index.d.ts`.
-- Styles alias: `@chapter-39/shared-template/styles` resolves to `styles/root.scss`.
-- Styles subpaths: `@chapter-39/shared-template/styles/*` for specific SCSS modules.
-
-## Release & Publish
-
-- Tag releases as `vX.Y.Z` to trigger the GitHub Actions publish workflow.
-- Remove `"private": true` before publishing to GitHub Packages.
+- Require Node 20+. Never commit secrets; `.env` is ignored. Use GitHub Actions secrets.
+- Dependabot keeps deps current; merge with CI green.
