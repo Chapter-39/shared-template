@@ -27,10 +27,10 @@ This repo provides shared TypeScript types and SCSS styles with a minimal, CI-fr
 
 ## Testing Guidelines
 
-- No test framework bundled. Recommended: Vitest or Jest.
+- Standard: Vitest for unit/integration tests; Playwright for E2E where applicable.
 - Place tests in `tests/**` or next to sources (`*.test.ts` / `*.spec.ts`).
 - Aim for unit coverage on utilities; add lightweight integration tests as needed.
-- Run with your chosen tool (e.g., `vitest run`); ensure CI stays green.
+- Run with `vitest` scripts; ensure CI stays green.
 
 ## Commit & Pull Request Guidelines
 
